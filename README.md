@@ -1,7 +1,6 @@
 # ADS
 
-Bilder von Flicker downloaden <br>
-Via Webscraping und API <br>
+Bilder von Flicker downloaden via API <br>
 zB Suche nach Bergen, Wald, Fluss) <br>
 Datenaufbereitung via Tensorflow / Keras <br>
 CNN laufen lassen -> Klassifizierung <br>
