@@ -8,3 +8,5 @@ Verwendung von Cloud Service via Google Collab <br>
 Begründungen wieso was gemacht wurde oder wieso nicht eine Alternative zB in ein paar PP Folien
 
 https://colab.research.google.com/github/amkobee/ADS/blob/main/ADS.ipynb
+
+https://www.tensorflow.org/tutorials/images/classification
