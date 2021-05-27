@@ -149,6 +149,8 @@ Trainable params: 10,245
 Non-trainable params: 23,564,800
 _________________________________________________________________
 ```
+![resnet1](https://user-images.githubusercontent.com/72079017/119891353-27ff0e80-bf39-11eb-92f7-0f8b1547bfbc.png)
+![resnet2](https://user-images.githubusercontent.com/72079017/119891356-2897a500-bf39-11eb-8c2c-76d015a351ed.png)
 
 
 ## Schlussfolgerungen
