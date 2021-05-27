@@ -10,7 +10,7 @@
 </ol>
   
 ## About
-Wir haben für unsere Semesterarbeit im Modul Applied Data Science ein Model entwickelt, um Landschaften zu klassifizieren. <br>
+Wir haben für unsere Semesterarbeit im Modul Applied Data Science ein Modell entwickelt, um Landschaften zu klassifizieren. <br>
 Dazu haben wir von Flickr Bilder von unterschiedlichen Lanschaften heruntergeladen und in [diesem Ordner](photos.zip) zur Verfügung gestellt. <br>
 <br>
 Wir haben uns dazu entschieden den Code über Google Colab anstatt einer lokalen Jupyter Instanz zu schreiben, weil wir dadurch die Möglichkeit haben ohne zusätzliche Kosten die GPU bzw. TPU von Google zu verwenden. So können wir unser Modell schneller trainieren als auf unseren eigenen Rechnern. <br>
@@ -43,6 +43,112 @@ download_new_photos = False
 ```
 
 ## Resultate
+
+### Version 1
+
+In der ersten Version haben wir ein gewöhnliches CNN mit 10 Layern verwendet. Wir haben vorerst darauf verzichtet, weil wir eine Performance als Benchmark für weitere Versionen haben wollten.<br>
+Das Modell performt zwar mit dem Trainingsset sehr gut, jedoch besteht ein markanter Unterschied zum Testset. Das deutet darauf hin, dass wir ein Overfitting im Modell haben.<br>
+Dieses Overfitting wollen wir in der nächsten Version des Modells reduzieren.
+
+#### Model Summary
+```
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+rescaling (Rescaling)        (None, 180, 180, 3)       0         
+_________________________________________________________________
+conv2d (Conv2D)              (None, 180, 180, 16)      448       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 90, 90, 16)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 90, 90, 32)        4640      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 45, 45, 32)        0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 45, 45, 64)        18496     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 22, 22, 64)        0         
+_________________________________________________________________
+flatten (Flatten)            (None, 30976)             0         
+_________________________________________________________________
+dense (Dense)                (None, 128)               3965056   
+_________________________________________________________________
+dense_1 (Dense)              (None, 5)                 645       
+=================================================================
+Total params: 3,989,285
+Trainable params: 3,989,285
+Non-trainable params: 0
+_________________________________________________________________
+
+```
+![grafik](https://user-images.githubusercontent.com/72079017/119888213-61ce1600-bf35-11eb-8d0d-37e1b10e21b1.png)
+
+
+### Version 2
+
+In der zweiten Verion unseres Modells wollten wir das Overfitting der ersten Version reduzieren. Dazu haben wir Data Augmentation, Dropout und Regularization ins Modell eingeführt.<br>
+Damit konnten wir zwar das Overfitting reduzieren, allerding leidet die Genauigkeit des Modells darunter.<br>
+Trotzdem wir unser aktuelles Modell mit einem State-of-the-Art Modell vergleichen, um einen Eindruck von der Performance zu erhalten.
+
+#### Model Summary
+```
+Model: "sequential_2"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+sequential_1 (Sequential)    (None, 180, 180, 3)       0         
+_________________________________________________________________
+rescaling_1 (Rescaling)      (None, 180, 180, 3)       0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 180, 180, 16)      448       
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 90, 90, 16)        0         
+_________________________________________________________________
+conv2d_4 (Conv2D)            (None, 90, 90, 32)        4640      
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 45, 45, 32)        0         
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 45, 45, 64)        18496     
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 22, 22, 64)        0         
+_________________________________________________________________
+dropout (Dropout)            (None, 22, 22, 64)        0         
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 30976)             0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 128)               3965056   
+_________________________________________________________________
+dense_3 (Dense)              (None, 5)                 645       
+=================================================================
+Total params: 3,989,285
+Trainable params: 3,989,285
+Non-trainable params: 0
+_________________________________________________________________
+```
+![grafik](https://user-images.githubusercontent.com/72079017/119889975-8925e280-bf37-11eb-8290-50cd4ad03d12.png)
+
+### ResNet V2 50
+
+Wir vergleichen unser Modell mit dem ResNet V2 50. Dieses erzielt sehr konstante Werte zwischen Training- und Testsets.<br>
+Auch bezüglich der Genauigkeit übertrifft es unser Modell, allerdings ist zu beachten, dass unser Modell bloss 12 Layer verwendet, während ResNet in dieser Version 50 Layer verwendet und einzelne überspringt, um bessere Resultate zu erzielen.
+#### Model Summary
+```
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+keras_layer (KerasLayer)     (None, 2048)              23564800  
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 2048)              0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 5)                 10245     
+=================================================================
+Total params: 23,575,045
+Trainable params: 10,245
+Non-trainable params: 23,564,800
+_________________________________________________________________
+```
 
 
 ## Schlussfolgerungen
