@@ -6,6 +6,7 @@
   <li><a href="#reproduction">Reproduction</a></li>
   <li><a href="#resultate">Resultate</a></li>
   <li><a href="#schlussfolgerungen">Schlussfolgerungen</a></li>
+  <li><a href="#quellen">Quellen</a></li>
 </ol>
   
 ## About
@@ -53,6 +54,15 @@ Besteht der Bedarf nach mehr Bildern, können die Bilder lokal gespeichert und e
 **Datenqualität**<br>
 Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, indem wir zufällige Bilder heruntergeladen haben. So verringern wir die Wahrscheinlichkeit, dass Bilder vom gleichen User und der gleichen Landschaft mehrfach verwendet werden.
 
+## Quellen
+<li>Slides from Applied Data Science lectures></li>
+<li>https://www.tensorflow.org/tutorials/images/classification</li>
+<li>https://www.flickr.com/services/apps/create/apply</li>
+<br><br><br><br><br>
+
+
+
+
 Bilder von Flicker downloaden via API <br>
 zB Suche nach Bergen, Wald, Fluss) <br>
 Datenaufbereitung via Tensorflow / Keras <br>
@@ -60,6 +70,3 @@ CNN laufen lassen -> Klassifizierung <br>
 Verwendung von Cloud Service via Google Collab <br>
 Begründungen wieso was gemacht wurde oder wieso nicht eine Alternative zB in ein paar PP Folien
 
-
-
-https://www.tensorflow.org/tutorials/images/classification
