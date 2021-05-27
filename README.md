@@ -55,7 +55,7 @@ Besteht der Bedarf nach mehr Bildern, können die Bilder lokal gespeichert und e
 Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, indem wir zufällige Bilder heruntergeladen haben. So verringern wir die Wahrscheinlichkeit, dass Bilder vom gleichen User und der gleichen Landschaft mehrfach verwendet werden.
 
 ## Quellen
-<li>Slides from Applied Data Science lectures></li>
+<li>Vorlesungsunterlagen Applied Data Science</li>
 <li>https://www.tensorflow.org/tutorials/images/classification</li>
 <li>https://www.flickr.com/services/apps/create/apply</li>
 <br><br><br><br><br>
