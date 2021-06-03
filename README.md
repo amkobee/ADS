@@ -221,10 +221,7 @@ Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Q
 <li>Vorlesungsunterlagen Applied Data Science</li>
 <li>https://www.tensorflow.org/tutorials/images/classification</li>
 <li>https://www.flickr.com/services/apps/create/apply</li>
-[Tensorflow Tutorial](https://www.tensorflow.org/tutorials/images/classification){:target="_blank"}
 <br><br><br><br><br>
-<a href="https://www.tensorflow.org/tutorials/images/classification" target="_blank"></a>
-
 
 
 Bilder von Flicker downloaden via API <br>
