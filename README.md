@@ -223,7 +223,7 @@ Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Q
 <li>https://www.flickr.com/services/apps/create/apply</li>
 [Tensorflow Tutorial](https://www.tensorflow.org/tutorials/images/classification){:target="_blank"}
 <br><br><br><br><br>
-href="https://www.tensorflow.org/tutorials/images/classification" target="_blank"
+<a href="https://www.tensorflow.org/tutorials/images/classification" target="_blank"></a>
 
 
 
