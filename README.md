@@ -255,13 +255,3 @@ Weiter ordnen Menschen die gleichen Bilder unterschiedlich ein. Ein Fluss, der d
 <li>Vorlesungsunterlagen Applied Data Science</li>
 <li>https://www.tensorflow.org/tutorials/images/classification</li>
 <li>https://www.flickr.com/services/apps/create/apply</li>
-<br><br><br><br><br>
-
-
-Bilder von Flicker downloaden via API <br>
-zB Suche nach Bergen, Wald, Fluss) <br>
-Datenaufbereitung via Tensorflow / Keras <br>
-CNN laufen lassen -> Klassifizierung <br>
-Verwendung von Cloud Service via Google Collab <br>
-Begründungen wieso was gemacht wurde oder wieso nicht eine Alternative zB in ein paar PP Folien
-
