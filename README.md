@@ -4,6 +4,7 @@
 <ol>
   <li><a href="#about">About</a></li>
   <li><a href="#reproduction">Reproduction</a></li>
+  <li><a href="#beispielbilder">Beispielbilder</a></li>
   <li><a href="#resultate">Resultate</a></li>
   <li><a href="#schlussfolgerungen">Schlussfolgerungen</a></li>
   <li><a href="#quellen">Quellen</a></li>
