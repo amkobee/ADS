@@ -50,12 +50,11 @@ download_new_photos = False
 
 
 ## Resultate
+Wir haben uns entschieden unser Notebook so zu organisieren, dass alle Anpassungen, die am Modell vorgenommen wurden in einem neuen Abschnitt aufgeführt werden. <br>
+Damit wollen wir sehen, wie sich unser Modell entwickelt und wie es im Vergleich zum Vorgänger performt.
 
 ### Version 1
-
-In der ersten Version haben wir ein gewöhnliches CNN mit 10 Layern verwendet. Wir haben vorerst darauf verzichtet, weil wir eine Performance als Benchmark für weitere Versionen haben wollten.<br>
-Das Modell performt zwar mit dem Trainingsset sehr gut, jedoch besteht ein markanter Unterschied zum Testset. Das deutet darauf hin, dass wir ein Overfitting im Modell haben.<br>
-Dieses Overfitting wollen wir in der nächsten Version des Modells reduzieren.
+Das Resultat des ersten Modells ist einigermassen akzeptabel. Die Genauigkeit des Trainingset ist mit knapp 95% extrem hoch, wobei die des Validationset nur bei rund 50% liegt. Das ist ein klares Anzeichen für Overfitting, was wir in der nächsten Iteration mit Hilfe von Dropout, Regularization und Data Augmentation verringern wollen.
 
 #### Model Summary
 ```
@@ -93,10 +92,8 @@ _________________________________________________________________
 
 
 ### Version 2
-
-In der zweiten Verion unseres Modells wollten wir das Overfitting der ersten Version reduzieren. Dazu haben wir Data Augmentation, Dropout und Regularization ins Modell eingeführt.<br>
-Damit konnten wir zwar das Overfitting reduzieren, allerding leidet die Genauigkeit des Modells darunter.<br>
-Wir möchten nun unser Modell verbessern indem wir weitere Layer hinzufügen.
+Wir waren in der Lage das Overfitting sehr zu reduzieren. Weiter konnten wir die Genauigkeit marginal erhöhen, sind damit aber noch nicht ganz zufrieden.<br>
+In der nächsten Iteratino wollen wir durch da Hinzufügen von weiteren Layern die Genauigkeit erhöhen.
 
 #### Model Summary
 ```
@@ -136,8 +133,9 @@ _________________________________________________________________
 
 
 ### Version 3
-In dieser Version haben wir weitere Layer hinzugefügt. <br>
-Damit konnten wir die Performance marginal steigern. Wir möchten nun unser Modell mit einem State-of-the-Art Modell vergleichen, um einen Eindruck von der Performance zu erhalten.
+Wir konnten die Genauigkeit mit mehr Layern nicht signifikant erhöhen. Um unser Modell weiter zu verbessern, müssten wir ein Recurrent Neural Network aufbauen.<br>
+Deshalb verwenden wir in der nächsten Iteration ResNet V2 50 um es mit unseren Daten zu trainieren.<br>
+Anschliessend möchten wir unser Modell mit einem State-of-the-Art Modell vergleichen.
 
 #### Model Summary
 ```
@@ -195,9 +193,9 @@ _________________________________________________________________
 
 
 ### ResNet V2 50
-
-Wir vergleichen unser Modell mit dem ResNet V2 50. Dieses erzielt sehr konstante Werte zwischen Training- und Testsets.<br>
-Auch bezüglich der Genauigkeit übertrifft es unser Modell, allerdings ist zu beachten, dass unser Modell bloss 12 Layer verwendet, während ResNet in dieser Version 50 Layer verwendet und einzelne überspringt, um bessere Resultate zu erzielen.
+Das ResNet V2 50 erzielt eine 10-15% höhere Genauigkeit als unser Modell. Dieses Resultat haben wir auch durch die höhere Komplexität des Modells erwartet. <br>
+In der nächsten Iteration wollen wir noch das gesamte ResNet V2 mit allen 152 Layern prüfen.
+The ResNet V2 50 model outperforms our model by approx. 10-15% in accuracy.
 #### Model Summary
 ```
 _________________________________________________________________
@@ -218,12 +216,29 @@ _________________________________________________________________
 
 
 ### ResNet V2 152
+Das ResNet V2 152 performt ähnlich wie die Variante mit bloss 50 Layern.<br>
+Wir vermuten, dass das Modell mit 152 Layern ein Problem mit der geringen Anzahl Daten hat. Es bräuchte wohl mindestens 10000 Bilder statt bloss rund 6000.<br>
+Wir empfehlen deshalb das ganze Modell mit einer lokalen GPU zu trainieren, weil es da auch kein Problem gibt mit Speicherbegrenzungen.
 
 
 #### Model Summary
 ```
-
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+keras_layer_5 (KerasLayer)   (None, 2048)              58331648  
+_________________________________________________________________
+dropout_42 (Dropout)         (None, 2048)              0         
+_________________________________________________________________
+dense_51 (Dense)             (None, 5)                 10245     
+=================================================================
+Total params: 58,341,893
+Trainable params: 10,245
+Non-trainable params: 58,331,648
+_________________________________________________________________
 ```
+![grafik](https://user-images.githubusercontent.com/72079017/120895715-8b1a3080-c61e-11eb-92b8-7dc82ee4132e.png)
+
 
 ## Schlussfolgerungen
 
@@ -232,7 +247,8 @@ Durch die Limitierung von GitHub, dass auf einer Repo maximal 100MB gespeichert 
 Besteht der Bedarf nach mehr Bildern, können die Bilder lokal gespeichert und eingelesen werden.
 
 **Datenqualität**<br>
-Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, indem wir zufällige Bilder heruntergeladen haben. So verringern wir die Wahrscheinlichkeit, dass Bilder vom gleichen User und der gleichen Landschaft mehrfach verwendet werden.
+Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, indem wir zufällige Bilder heruntergeladen haben. So verringern wir die Wahrscheinlichkeit, dass Bilder vom gleichen User und der gleichen Landschaft mehrfach verwendet werden.<br>
+Weiter ordnen Menschen die gleichen Bilder unterschiedlich ein. Ein Fluss, der durch einen Wald verläuft, kann schliesslich als beides klassifiziert werden. Sind noch Berge zu sehen, kommt eine Klasse dazu.
 
 ## Quellen
 <li>Vorlesungsunterlagen Applied Data Science</li>
