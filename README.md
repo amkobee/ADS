@@ -41,6 +41,13 @@ download_new_photos = True
 # don't download new photos
 download_new_photos = False
 ```
+## Beispielbilder
+![overview](https://user-images.githubusercontent.com/72079017/120895030-8011d100-c61b-11eb-9f3b-55d2e43f848e.png)
+
+### Data Augmentation
+![grafik](https://user-images.githubusercontent.com/72079017/120895090-bc453180-c61b-11eb-8cc1-fe5436746b7d.png)
+
+
 
 ## Resultate
 
@@ -52,37 +59,36 @@ Dieses Overfitting wollen wir in der nächsten Version des Modells reduzieren.
 
 #### Model Summary
 ```
-Model: "sequential"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-rescaling (Rescaling)        (None, 180, 180, 3)       0         
+rescaling_20 (Rescaling)     (None, 180, 180, 3)       0         
 _________________________________________________________________
-conv2d (Conv2D)              (None, 180, 180, 16)      448       
+conv2d_111 (Conv2D)          (None, 180, 180, 16)      448       
 _________________________________________________________________
-max_pooling2d (MaxPooling2D) (None, 90, 90, 16)        0         
+max_pooling2d_111 (MaxPoolin (None, 90, 90, 16)        0         
 _________________________________________________________________
-conv2d_1 (Conv2D)            (None, 90, 90, 32)        4640      
+conv2d_112 (Conv2D)          (None, 90, 90, 32)        4640      
 _________________________________________________________________
-max_pooling2d_1 (MaxPooling2 (None, 45, 45, 32)        0         
+max_pooling2d_112 (MaxPoolin (None, 45, 45, 32)        0         
 _________________________________________________________________
-conv2d_2 (Conv2D)            (None, 45, 45, 64)        18496     
+conv2d_113 (Conv2D)          (None, 45, 45, 64)        18496     
 _________________________________________________________________
-max_pooling2d_2 (MaxPooling2 (None, 22, 22, 64)        0         
+max_pooling2d_113 (MaxPoolin (None, 22, 22, 64)        0         
 _________________________________________________________________
-flatten (Flatten)            (None, 30976)             0         
+flatten_20 (Flatten)         (None, 30976)             0         
 _________________________________________________________________
-dense (Dense)                (None, 128)               3965056   
+dense_43 (Dense)             (None, 128)               3965056   
 _________________________________________________________________
-dense_1 (Dense)              (None, 5)                 645       
+dense_44 (Dense)             (None, 5)                 645       
 =================================================================
 Total params: 3,989,285
 Trainable params: 3,989,285
 Non-trainable params: 0
 _________________________________________________________________
-
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120203757-570ecc00-c228-11eb-98c8-2dbf7ff0ab00.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120895045-8e5fed00-c61b-11eb-9893-77c3406b8da5.png)
+
 
 
 
@@ -94,40 +100,40 @@ Wir möchten nun unser Modell verbessern indem wir weitere Layer hinzufügen.
 
 #### Model Summary
 ```
-Model: "sequential_2"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-sequential_1 (Sequential)    (None, 180, 180, 3)       0         
+sequential_31 (Sequential)   (None, 180, 180, 3)       0         
 _________________________________________________________________
-rescaling_1 (Rescaling)      (None, 180, 180, 3)       0         
+rescaling_21 (Rescaling)     (None, 180, 180, 3)       0         
 _________________________________________________________________
-conv2d_3 (Conv2D)            (None, 180, 180, 16)      448       
+conv2d_114 (Conv2D)          (None, 180, 180, 16)      448       
 _________________________________________________________________
-max_pooling2d_3 (MaxPooling2 (None, 90, 90, 16)        0         
+max_pooling2d_114 (MaxPoolin (None, 90, 90, 16)        0         
 _________________________________________________________________
-conv2d_4 (Conv2D)            (None, 90, 90, 32)        4640      
+conv2d_115 (Conv2D)          (None, 90, 90, 32)        4640      
 _________________________________________________________________
-max_pooling2d_4 (MaxPooling2 (None, 45, 45, 32)        0         
+max_pooling2d_115 (MaxPoolin (None, 45, 45, 32)        0         
 _________________________________________________________________
-conv2d_5 (Conv2D)            (None, 45, 45, 64)        18496     
+conv2d_116 (Conv2D)          (None, 45, 45, 64)        18496     
 _________________________________________________________________
-max_pooling2d_5 (MaxPooling2 (None, 22, 22, 64)        0         
+max_pooling2d_116 (MaxPoolin (None, 22, 22, 64)        0         
 _________________________________________________________________
-dropout (Dropout)            (None, 22, 22, 64)        0         
+dropout_37 (Dropout)         (None, 22, 22, 64)        0         
 _________________________________________________________________
-flatten_1 (Flatten)          (None, 30976)             0         
+flatten_21 (Flatten)         (None, 30976)             0         
 _________________________________________________________________
-dense_2 (Dense)              (None, 128)               3965056   
+dense_45 (Dense)             (None, 128)               3965056   
 _________________________________________________________________
-dense_3 (Dense)              (None, 5)                 645       
+dense_46 (Dense)             (None, 5)                 645       
 =================================================================
 Total params: 3,989,285
 Trainable params: 3,989,285
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120203798-6130ca80-c228-11eb-9e7b-716b7c48e740.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120895056-9750be80-c61b-11eb-9b83-b482a5c88d0f.png)
+
 
 ### Version 3
 In dieser Version haben wir weitere Layer hinzugefügt. <br>
@@ -135,52 +141,58 @@ Damit konnten wir die Performance marginal steigern. Wir möchten nun unser Mode
 
 #### Model Summary
 ```
-Model: "sequential_8"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-sequential_2 (Sequential)    (None, 180, 180, 3)       0         
+sequential_31 (Sequential)   (None, 180, 180, 3)       0         
 _________________________________________________________________
-rescaling_8 (Rescaling)      (None, 180, 180, 3)       0         
+rescaling_22 (Rescaling)     (None, 180, 180, 3)       0         
 _________________________________________________________________
-conv2d_30 (Conv2D)           (None, 180, 180, 16)      448       
+conv2d_117 (Conv2D)          (None, 180, 180, 16)      448       
 _________________________________________________________________
-max_pooling2d_25 (MaxPooling (None, 90, 90, 16)        0         
+max_pooling2d_117 (MaxPoolin (None, 90, 90, 16)        0         
 _________________________________________________________________
-conv2d_31 (Conv2D)           (None, 90, 90, 16)        2320      
+conv2d_118 (Conv2D)          (None, 90, 90, 16)        2320      
 _________________________________________________________________
-max_pooling2d_26 (MaxPooling (None, 45, 45, 16)        0         
+max_pooling2d_118 (MaxPoolin (None, 45, 45, 16)        0         
 _________________________________________________________________
-dropout_13 (Dropout)         (None, 45, 45, 16)        0         
+conv2d_119 (Conv2D)          (None, 45, 45, 16)        2320      
 _________________________________________________________________
-conv2d_32 (Conv2D)           (None, 45, 45, 32)        4640      
+max_pooling2d_119 (MaxPoolin (None, 22, 22, 16)        0         
 _________________________________________________________________
-max_pooling2d_27 (MaxPooling (None, 22, 22, 32)        0         
+conv2d_120 (Conv2D)          (None, 22, 22, 16)        2320      
 _________________________________________________________________
-dropout_14 (Dropout)         (None, 22, 22, 32)        0         
+max_pooling2d_120 (MaxPoolin (None, 11, 11, 16)        0         
 _________________________________________________________________
-conv2d_33 (Conv2D)           (None, 22, 22, 32)        9248      
+dropout_38 (Dropout)         (None, 11, 11, 16)        0         
 _________________________________________________________________
-max_pooling2d_28 (MaxPooling (None, 11, 11, 32)        0         
+conv2d_121 (Conv2D)          (None, 11, 11, 32)        4640      
 _________________________________________________________________
-conv2d_34 (Conv2D)           (None, 11, 11, 64)        18496     
+max_pooling2d_121 (MaxPoolin (None, 5, 5, 32)          0         
 _________________________________________________________________
-max_pooling2d_29 (MaxPooling (None, 5, 5, 64)          0         
+dropout_39 (Dropout)         (None, 5, 5, 32)          0         
 _________________________________________________________________
-dropout_15 (Dropout)         (None, 5, 5, 64)          0         
+conv2d_122 (Conv2D)          (None, 5, 5, 32)          9248      
 _________________________________________________________________
-flatten_7 (Flatten)          (None, 1600)              0         
+max_pooling2d_122 (MaxPoolin (None, 2, 2, 32)          0         
 _________________________________________________________________
-dense_15 (Dense)             (None, 64)                102464    
+conv2d_123 (Conv2D)          (None, 2, 2, 64)          18496     
 _________________________________________________________________
-dense_16 (Dense)             (None, 5)                 325       
+max_pooling2d_123 (MaxPoolin (None, 1, 1, 64)          0         
+_________________________________________________________________
+flatten_22 (Flatten)         (None, 64)                0         
+_________________________________________________________________
+dense_47 (Dense)             (None, 64)                4160      
+_________________________________________________________________
+dense_48 (Dense)             (None, 5)                 325       
 =================================================================
-Total params: 137,941
-Trainable params: 137,941
+Total params: 44,277
+Trainable params: 44,277
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120203938-8c1b1e80-c228-11eb-8352-9b500bbcb0d4.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120895066-a8013480-c61b-11eb-854a-dde3938efdf4.png)
+
 
 ### ResNet V2 50
 
@@ -188,25 +200,30 @@ Wir vergleichen unser Modell mit dem ResNet V2 50. Dieses erzielt sehr konstante
 Auch bezüglich der Genauigkeit übertrifft es unser Modell, allerdings ist zu beachten, dass unser Modell bloss 12 Layer verwendet, während ResNet in dieser Version 50 Layer verwendet und einzelne überspringt, um bessere Resultate zu erzielen.
 #### Model Summary
 ```
-Model: "sequential_4"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-keras_layer (KerasLayer)     (None, 2048)              23564800  
+keras_layer_4 (KerasLayer)   (None, 2048)              23564800  
 _________________________________________________________________
-dropout_1 (Dropout)          (None, 2048)              0         
+dropout_41 (Dropout)         (None, 2048)              0         
 _________________________________________________________________
-dense_4 (Dense)              (None, 5)                 10245     
+dense_50 (Dense)             (None, 5)                 10245     
 =================================================================
 Total params: 23,575,045
 Trainable params: 10,245
 Non-trainable params: 23,564,800
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120203839-6c83f600-c228-11eb-8969-1092ebc55a90.png)
-![grafik](https://user-images.githubusercontent.com/72079017/120203858-7279d700-c228-11eb-9b4e-fa53d0765691.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120895165-03cbbd80-c61c-11eb-947d-252052ced354.png)
 
 
+### ResNet V2 152
+
+
+#### Model Summary
+```
+
+```
 
 ## Schlussfolgerungen
 
