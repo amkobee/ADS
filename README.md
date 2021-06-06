@@ -87,7 +87,8 @@ Trainable params: 3,989,285
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120895045-8e5fed00-c61b-11eb-9893-77c3406b8da5.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120941948-e8e57000-c725-11eb-9283-c25cdba377ff.png)
+
 
 
 
@@ -130,7 +131,8 @@ Trainable params: 3,989,285
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120895056-9750be80-c61b-11eb-9b83-b482a5c88d0f.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120941953-f1d64180-c725-11eb-9db8-1a1fbe5c5ddf.png)
+
 
 
 ### Version 3
@@ -190,7 +192,7 @@ Trainable params: 44,277
 Non-trainable params: 0
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120895066-a8013480-c61b-11eb-854a-dde3938efdf4.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120941962-fbf84000-c725-11eb-8374-cba16b911f03.png)
 
 
 ### ResNet V2 50
@@ -213,7 +215,8 @@ Trainable params: 10,245
 Non-trainable params: 23,564,800
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120895165-03cbbd80-c61c-11eb-947d-252052ced354.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120941979-0d414c80-c726-11eb-9db1-810915260c61.png)
+
 
 
 ### ResNet V2 152
@@ -238,7 +241,8 @@ Trainable params: 10,245
 Non-trainable params: 58,331,648
 _________________________________________________________________
 ```
-![grafik](https://user-images.githubusercontent.com/72079017/120895715-8b1a3080-c61e-11eb-92b8-7dc82ee4132e.png)
+![grafik](https://user-images.githubusercontent.com/72079017/120941985-13cfc400-c726-11eb-95a5-0879233bb658.png)
+
 
 
 ## Schlussfolgerungen
