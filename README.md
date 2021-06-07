@@ -248,12 +248,14 @@ _________________________________________________________________
 ## Schlussfolgerungen
 
 **Limitierungen**<br>
-Durch die Limitierung von GitHub, dass auf einer Repo maximal 100MB gespeichert werden können, haben wir uns entschlossen die Bilder nicht in voller Auflösung herunterzuladen. Dadurch können wir immerhin rund 5000 Bilder für unser Modell verwenden.<br>
-Besteht der Bedarf nach mehr Bildern, können die Bilder lokal gespeichert und eingelesen werden.
+Durch die Limitierung von GitHub, dass auf einer Repo maximal 100MB gespeichert werden können, haben wir uns entschlossen die Bilder über git lfs ins Repository einzuspielen. Nach Abschluss dieses Projekts, werden diese wieder entfernt.
 
 **Datenqualität**<br>
-Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, indem wir zufällige Bilder heruntergeladen haben. So verringern wir die Wahrscheinlichkeit, dass Bilder vom gleichen User und der gleichen Landschaft mehrfach verwendet werden.<br>
-Weiter ordnen Menschen die gleichen Bilder unterschiedlich ein. Ein Fluss, der durch einen Wald verläuft, kann schliesslich als beides klassifiziert werden. Sind noch Berge zu sehen, kommt eine Klasse dazu.
+Da auf Flickr jeder eigene Bilder hochladen und beschriften kann, kann das die Qualität negativ beeinflussen. Wir haben dem entgegengewirkt, im GET-Request nach dem Attribut "relevance" sortieren.<br>
+
+**Modellergebnisse**<br>
+Wir konnten mit unseren selbst erstellten Modellen immer wieder leichte Verbesserungen zum Vorgängermodell erzielen. Um ein noch besseres Resultat zu erzielen, müssten die einzelnen Layer besser aufeinander abgestimmt sein und die Parameter noch weiter optimiert werden.<br>
+Auch sieht man beim ResNet, dass das grössere Modell in diesem Fall keine wirklichen Vorteile bringt. Wenn die Bilder manuell bereingt würden, wäre es aber vermutlich in der Lage ein besseres Ergebnis zu erzielen.
 
 ## Quellen
 <li>Vorlesungsunterlagen Applied Data Science</li>
