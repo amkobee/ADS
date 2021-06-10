@@ -1,4 +1,4 @@
-filename,location,photo_id,date_taken,views,longitude,latitude,owner,accuracy
+filename,class,photo_id,date_taken,views,longitude,latitude,owner,accuracy
 photo_1.jpg,beach,39369934961,2013-12-29 15:53:55,20405,0,0,21893688@N03,0
 photo_2.jpg,beach,29262432852,2016-05-06 18:06:06,5878,-117.325315,33.116130,8398907@N02,13
 photo_3.jpg,beach,51201174994,2020-08-15 15:43:24,1344,-4.543889,48.243611,73422502@N08,16
